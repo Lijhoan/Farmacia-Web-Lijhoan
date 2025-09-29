@@ -153,19 +153,19 @@
                         <div class="card-body">
                             <h6>Categorías</h6>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="categoria1">
+                                <input class="form-check-input filtro-categoria" type="checkbox" id="categoria1" value="higiene-bucal">
                                 <label class="form-check-label" for="categoria1">Higiene Bucal</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="categoria2">
+                                <input class="form-check-input filtro-categoria" type="checkbox" id="categoria2" value="cuidado-capilar">
                                 <label class="form-check-label" for="categoria2">Cuidado Capilar</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="categoria3">
+                                <input class="form-check-input filtro-categoria" type="checkbox" id="categoria3" value="higiene-corporal">
                                 <label class="form-check-label" for="categoria3">Higiene Corporal</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="categoria4">
+                                <input class="form-check-input filtro-categoria" type="checkbox" id="categoria4" value="desodorantes">
                                 <label class="form-check-label" for="categoria4">Desodorantes</label>
                             </div>
                             
@@ -189,7 +189,8 @@
                             
                             <h6>Precio</h6>
                             <div class="range">
-                                <input type="range" class="form-range" id="customRange1">
+                                <input id="precioMax" type="range" class="form-range" min="0" max="100" step="0.5">
+                                <small class="text-muted">Hasta: <span id="precioMaxValor">$0.00</span></small>
                             </div>
                             
                             <button class="btn btn-farmacia btn-sm w-100 mt-3">Aplicar Filtros</button>
@@ -221,9 +222,9 @@
                     </div>
                     
                     <!-- Lista de productos -->
-                    <div class="row">
+                    <div id="gridProductos" class="row">
                         <!-- Producto 1 -->
-                        <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="col-md-6 col-lg-4 mb-4 product" data-category="higiene-bucal" data-price="3.82">
                             <div class="card h-100">
                                 <span class="badge bg-danger badge-promo">-15%</span>
                                 <img src="https://oechsle.vteximg.com.br/arquivos/ids/16067846-1000-1000/image-0f1b8d19863a462ea51555f6f5b5b9d0.jpg?v=638285967749170000" class="card-img-top" alt="Crema Dental">
@@ -242,7 +243,8 @@
                         </div>
                         
                         <!-- Producto 2 -->
-                        <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="col-md-6 col-lg-4 mb-4 product" data-category="cuidado-capilar" data-price="7.99">
+
                             <div class="card h-100">
                                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdEBGYg6UIrPL6uB2wNMcLHVPP2j4wX1PRgg&s" class="card-img-top" alt="Shampoo">
                                 <div class="card-body">
@@ -257,7 +259,7 @@
                         </div>
                         
                         <!-- Producto 3 -->
-                        <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="col-md-6 col-lg-4 mb-4 product" data-category="higiene-corporal" data-price="5.25">
                             <div class="card h-100">
                                 <span class="badge bg-success badge-promo">Nuevo</span>
                                 <img src="https://plazavea.vteximg.com.br/arquivos/ids/22278044-512-512/918221.jpg" class="card-img-top" alt="Jabón Líquido">
@@ -273,7 +275,7 @@
                         </div>
                         
                         <!-- Producto 4 -->
-                        <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="col-md-6 col-lg-4 mb-4 product" data-category="desodorantes" data-price="8.75">
                             <div class="card h-100">
                                 <img src="https://plazavea.vteximg.com.br/arquivos/ids/537495-450-450/20075775.jpg?v=637421390970970000" class="card-img-top" alt="Desodorante">
                                 <div class="card-body">
@@ -288,7 +290,7 @@
                         </div>
                         
                         <!-- Producto 5 -->
-                        <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="col-md-6 col-lg-4 mb-4 product" data-category="higiene-bucal" data-price="3.04">
                             <div class="card h-100">
                                 <span class="badge bg-danger badge-promo">-20%</span>
                                 <img src="https://plazavea.vteximg.com.br/arquivos/ids/30208280-450-450/20088804.jpg?v=638676872714270000" class="card-img-top" alt="Cepillo Dental">
@@ -307,7 +309,7 @@
                         </div>
                         
                         <!-- Producto 6 -->
-                        <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="col-md-6 col-lg-4 mb-4 product" data-category="cuidado-capilar" data-price="7.50">
                             <div class="card h-100">
                                 <img src="https://leonisa.pe/cdn/shop/files/PN138_001_1200X1500_1_960x.jpg?v=1721047118" class="card-img-top" alt="Acondicionador">
                                 <div class="card-body">
@@ -322,7 +324,7 @@
                         </div>
                         
                         <!-- Producto 7 -->
-                        <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="col-md-6 col-lg-4 mb-4 product" data-category="higiene-bucal" data-price="6.99">
                             <div class="card h-100">
                                 <img src="aqui pega la direccion web de tu imagen" class="card-img-top" alt="Enjuague Bucal">
                                 <div class="card-body">
@@ -337,7 +339,7 @@
                         </div>
                         
                         <!-- Producto 8 -->
-                        <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="col-md-6 col-lg-4 mb-4 product" data-category="higiene-corporal" data-price="5.50">
                             <div class="card h-100">
                                 <span class="badge bg-warning text-dark badge-promo">Oferta</span>
                                 <img src="aqui pega la direccion web de tu imagen" class="card-img-top" alt="Gel de Baño">
@@ -353,7 +355,7 @@
                         </div>
                         
                         <!-- Producto 9 -->
-                        <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="col-md-6 col-lg-4 mb-4 product" data-category="higiene-corporal" data-price="6.25">
                             <div class="card h-100">
                                 <img src="aqui pega la direccion web de tu imagen" class="card-img-top" alt="Crema para Afeitar">
                                 <div class="card-body">
@@ -439,6 +441,7 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./assets/carrito.js"></script>
+    <script src="./assets/filtros.js?v=1"></script>
     <script>
         // Cambiar todos los botones "Añadir al carrito" para que tengan la clase correcta
         document.addEventListener('DOMContentLoaded', function() {
