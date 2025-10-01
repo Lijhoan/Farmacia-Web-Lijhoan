@@ -6,3 +6,16 @@
 .results-section .card.sugerencia{background-color:#ffc107;color:#212529}
 #medication-results>div{min-width:260px}
 
+/* Estilos para la sección de corrección manual */
+#correction-section {
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  margin: 20px 0;
+}
+
+#correction-buttons {
+  justify-content: flex-end;
+}
+
