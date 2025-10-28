@@ -11,6 +11,8 @@ const correctionButtons = document.getElementById('correction-buttons');
 const scanButton = document.getElementById('scan-button');
 const recipeImage = document.getElementById('recipe-image');
 
+const API_URL = "https://farmacia-web-lijhoan.onrender.com";
+
 // Extraer medicamentos del texto
 function extractMeds(text) {
   return text.split(/\n|,|\./).map(s => s.trim()).filter(Boolean);
@@ -59,7 +61,7 @@ validateButton.addEventListener('click', async () => {
   
   try {
     const meds = extractMeds(text);
-    const res = await fetch('http://localhost:3000/validar-stock', {
+    const res = await fetch(`${API_URL}/validar-stock`, {
       method: 'POST', 
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({medicamentos: meds})
@@ -98,7 +100,7 @@ normalizeButton.addEventListener('click', async () => {
   try {
     console.log("Enviando texto a normalizar:", text);
     
-    const res = await fetch('http://localhost:3000/normalizar-receta', {
+    const res = await fetch(`${API_URL}/normalizar-receta`, {
       method: 'POST', 
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({texto: text})
@@ -242,7 +244,7 @@ validateCorrectedButton.addEventListener('click', async () => {
   
   try {
     const meds = extractMeds(correctedText);
-    const response = await fetch('http://localhost:3000/validar-stock', {
+    const response = await fetch(`${API_URL}/validar-stock`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ medicamentos: meds })
